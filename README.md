@@ -6,4 +6,5 @@ This repository aims to share source code and datasets for network traffic class
 02_model_wang_1D   : https://github.com/echowei/DeepTraffic
 03_HASTIDS-1       : https://github.com/echowei/DeepTraffic
 03_HASTIDS-2       : https://github.com/echowei/DeepTraffic
-04_SAM             : 
+04_SAM             : https://github.com/xgr19/SAM-for-Traffic-Classification
+05-ET-BERT         : https://github.com/linwhitehat/ET-BERT
