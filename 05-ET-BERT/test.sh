@@ -1,0 +1,8 @@
+#!/bin/bash
+
+python3 fine-tuning/run_classifier.py --pretrained_model_path models/pretrained_model_encap.bin --vocab_path models/encryptd_vocab.txt --train_path datasets/vpn2016/encap_train.tsv --dev_path datasets/vpn2016/encap_test.tsv --test_path datasets/vpn2016/encap_test.tsv --epochs_num 100 --batch_size 128 --embedding word_pos_seg --encoder transformer --mask fully_visible --seq_length 128 --learning_rate 2e-5 --gpu 0 --output_model_path models/encap.bin
+mv models/finetuned_model.bin models/finetuned_model_encap.bin
+python3 fine-tuning/run_classifier.py --pretrained_model_path models/pretrained_model_cat.bin --vocab_path models/encryptd_vocab.txt --train_path datasets/vpn2016/cat_train.tsv --dev_path datasets/vpn2016/cat_test.tsv --test_path datasets/vpn2016/cat_test.tsv --epochs_num 100 --batch_size 128 --embedding word_pos_seg --encoder transformer --mask fully_visible --seq_length 128 --learning_rate 2e-5 --gpu 1 --output_model_path models/cat.bin
+mv models/finetuned_model.bin models/finetuned_model_cat.bin
+python3 fine-tuning/run_classifier.py --pretrained_model_path models/pretrained_model_app.bin --vocab_path models/encryptd_vocab.txt --train_path datasets/vpn2016/app_train.tsv --dev_path datasets/vpn2016/app_test.tsv --test_path datasets/vpn2016/app_test.tsv --epochs_num 100 --batch_size 128 --embedding word_pos_seg --encoder transformer --mask fully_visible --seq_length 128 --learning_rate 2e-5 --gpu 2 --output_model_path models/app.bin
+mv models/finetuned_model.bin models/finetuned_model_app.bin

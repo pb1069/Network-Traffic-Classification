@@ -1,0 +1,20 @@
+python3 inference/run_classifier_infer.py --load_model_path models/ETBERT_vpn_encapsulation.bin \
+                                          --vocab_path models/encryptd_vocab.txt \
+                                          --test_path datasets/vpn_use_tcp_8/XY_ETBERT_encapsulation_test.tsv \
+                                          --prediction_path result/ETBERT_vpn_encapsulation.tsv \
+                                          --labels_num 2 \
+                                          --embedding word_pos_seg --encoder transformer --mask fully_visible
+
+python3 inference/run_classifier_infer.py --load_model_path models/ETBERT_vpn_category.bin \
+                                          --vocab_path models/encryptd_vocab.txt \
+                                          --test_path datasets/vpn_use_tcp_8/XY_ETBERT_category_test.tsv \
+                                          --prediction_path result/ETBERT_vpn_category.tsv \
+                                          --labels_num 6 \
+                                          --embedding word_pos_seg --encoder transformer --mask fully_visible
+
+python3 inference/run_classifier_infer.py --load_model_path models/ETBERT_vpn_application.bin \
+                                          --vocab_path models/encryptd_vocab.txt \
+                                          --test_path datasets/vpn_use_tcp_8/XY_ETBERT_application_test.tsv \
+                                          --prediction_path result/ETBERT_vpn_application.tsv \
+                                          --labels_num 20 \
+                                          --embedding word_pos_seg --encoder transformer --mask fully_visible
